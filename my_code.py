@@ -1,6 +1,14 @@
 import pytest
 
 def fix_phone_num(phone_num_to_fix):
+  
+  init_phone_num_format = ""
+  for ch in phone_num_to_fix:
+    if ch.isdigit():
+      init_phone_num_format += ch
+
+  phone_num_to_fix = init_phone_num_format
+  
   if not phone_num_to_fix.isdigit():
     raise ValueError("Format must only be digits and no other characters (ex: 6509466488)")
   # given "5125558823". Split the parts, then recombine and return
